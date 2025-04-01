@@ -413,6 +413,18 @@ body {
 
 
 /* Media query */
+ /* New-hero 17) containerimiz 1140px, rasmimiz yaxshi ko'rinishi un 1140px dan oldin 1200px da "hero-img"ga o'zgartirish kiritamiz */
+
+ @media only screen and (max-width: 1200px) {
+  .hero-img {
+    position: static;/* 18) postion ong-chap 0ga teng boladi*/
+    margin-right: 30px; /* 19) rasm devorga tiqilib qolgan, ozgina suramiz*/
+  }
+ }
+
+
+
+
 @media only screen and (max-width: 1140px) {
   .feature {
     width: 30%;  /* 2) 340/1100*100=30.9% 30% deb oldim, 5% margin berdm  */
@@ -427,15 +439,65 @@ body {
 }
 
 
-/* 1) Features started here */
+/* 20) 1000 px dan pastga "hero img"ni eni boyini 350ga ozg */
 @media only screen and (max-width: 1000px) {
+  .hero-img {
+    width: 350px;
+    height: 350px;
+
+  }
+
+  /* 21) chap tomondagi "hero-content"ni ustida ish */
+  .hero-content {
+    flex-grow: 1; /*imkom boricha kengroq joy oladi*/
+    margin-right: 60px; /* rasmga qapishib qolmaydi*/
+  }
+
+  /* 22) "hero-heading" ni 36px qilamiz ozi 40 edi */
+  .hero-heading {
+    font-size: 36px;
+  }
+  /* 1) Features started here */
+
   .features {
     padding-top: 150px;
     padding-bottom: 150px;
   }
 }
 
+/* 23) 800px dan pastga rasmni kichikroq qilamiz. Ozi 350px edi taxminan 300px qilamiz */
+@media only screen and (max-width: 800px) {
+  .hero-img{
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* 24) 760px dan pastga ustma-ust tursin */
 @media only screen and (max-width: 760px) {
+  .hero-container {
+    flex-direction: column-reverse;
+  }
+
+  /* 25) hero-contentni tuliq chuzamiz */
+  .hero-content{
+    width: 100%;
+    margin-right: 0;
+    /* 27) hero-contentni o'rtaga joylaymiz 🛑760px*/
+    /* 10:53ga keldim */
+    display: flex;
+    flex-direction: column; /*usta-sut bo'ladi*/
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 26) rasmni margin-rignt ni olib margin-bottonga taxmimiy 36px beramiz */
+  .hero-img {
+    margin-right: 0;
+    margin-bottom: 54px;
+  }
+
+
   /* 4) 1-00px da padding 150 edi endi 90px qildm*/
   .features {
     padding-top: 90px;
@@ -544,7 +606,7 @@ body {
     text-align: center;
   }
 
-  /* 13) liniyachani o'rtaga kltr va mb 20px */
+  /* 13.5) liniyachani o'rtaga kltr va mb 20px */
   .orange-line {
     margin-left: auto;
     margin-right: auto;
@@ -572,6 +634,13 @@ body {
 
 
 @media only screen and (max-width: 400px) {
+  /* 28) 400px bo'lganda rasmning soyasi yuq bo'lsin */
+  .hero-img {
+    box-shadow: none;
+    /* 29) rasm yaxshi joylashishi uchun 🛑*/
+    max-width: 100%;
+    height: auto;
+  }
    /* 15) paddinglarini kichikroq qildm*/
   .features {
     padding-top: 70px;
