@@ -424,8 +424,20 @@ body {
 
 
 
-
+/* NEW-PROMO 30) 1140px ga kelganda "promo-img" width ni kamaytiramiz 380ga, ozi 420 edi (1140px tugadi✅)*/
 @media only screen and (max-width: 1140px) {
+  .promo-img {
+    width: 380px;
+    height: 380px;
+  }
+
+    /*38) 1140px dan pstga "promo" padding topi 120px edi, olib tashliman. 39-760px da */
+    .promo {
+      padding-top: 0;
+    }
+
+
+
   .feature {
     width: 30%;  /* 2) 340/1100*100=30.9% 30% deb oldim, 5% margin berdm  */
     margin-right: 5%;
@@ -441,6 +453,17 @@ body {
 
 /* 20) 1000 px dan pastga "hero img"ni eni boyini 350ga ozg */
 @media only screen and (max-width: 1000px) {
+  /* 31) rasmning enlarini moslashtiramiz  */
+  .promo-img {
+    position: static;
+  }
+
+  /* 32) chap tomomdagi teksga taxminiy margin-right bermiz. Eni 440px edi flexni ichida bo'gani un qisqarib ketyapdi (endi 900px ga utganimizda rasmni o'lchamini to'g'irlaymiz) (1000px da promo stil tugadi✅)*/
+  .promo-content {
+    margin-right: 36px;
+  }
+
+
   .hero-img {
     width: 350px;
     height: 350px;
@@ -465,6 +488,46 @@ body {
   }
 }
 
+/* 33) 900pxda rasm o'lchami 320 px qilamiz   */
+@media only screen and (max-width: 900px) {
+  .promo-img {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* 34) 900px da "promo-inner" ni ozgina px kamaytirsak rasm o'ynayapdi. Unga "align-items:flex-start" beramiz. 900 px tugadi ✅  Endi 840 pxga kelganda ustma-ust tursin deymiz*/
+.promo-inner {
+  align-items: flex-start;
+}
+
+
+
+/* 35) 840 pxga kelganda ustma-ust tursin deymiz */
+@media only screen and (max-width: 840px) {
+  .promo-inner {
+    flex-direction: column;
+  }
+
+  /* 36) promo-content.ni to'g'irlaymiz  */
+  .promo-content {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 24px; /*taxminiy*/
+  }
+
+  /* 37) Eni rasmimizni moslaymiz. 840px promo-stil tugadi✅ Endi 38- 1140pxda padding-top ni olib tashlab keyin 760px ga o'tamiz*/
+  .promo-img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;  /*rasmni tepa qismi ko'rinadi*/
+    border-radius: 22px;   /*12px edi 22 berdim*/
+  }
+}
+
+
+
+
 /* 23) 800px dan pastga rasmni kichikroq qilamiz. Ozi 350px edi taxminan 300px qilamiz */
 @media only screen and (max-width: 800px) {
   .hero-img{
@@ -473,8 +536,26 @@ body {
   }
 }
 
+
+
+
 /* 24) 760px dan pastga ustma-ust tursin */
 @media only screen and (max-width: 760px) {
+
+  .promo-inner {
+    /* 39) promo-inner qora qismarini 2ta tomonga taqab quyamiz. Oldin uni containerini o'lchamini (padding-left va padding-right ni) ko'r (20px ikkalsi ham) */
+    margin-left: -20px;
+    margin-right: -20px;
+    /* 40) ikki tomondagi qaralardan border-radius olib tashlimiz. ozi 12px edi */
+    border-radius: 0;
+  }
+
+  /* 41) "promo"dan pastki tomon paddingni olib tashimiz. ozi 120px edi. 760px promo-stil tugadi ✅ endi 650px*/
+  .promo {
+    padding-bottom: 0;
+  }
+
+
   .hero-container {
     flex-direction: column-reverse;
   }
@@ -484,7 +565,6 @@ body {
     width: 100%;
     margin-right: 0;
     /* 27) hero-contentni o'rtaga joylaymiz 🛑760px*/
-    /* 10:53ga keldim */
     display: flex;
     flex-direction: column; /*usta-sut bo'ladi*/
     align-items: center;
@@ -535,6 +615,13 @@ body {
 
 
 @media only screen and (max-width: 650px) {
+
+  /* 42) 650pxdan pastga "promo-inner"ni ikki chetga taqimiz. padding 64px edi. 650px✅ Endi 400px da rasmni o'lchamini to'g'irlaymiz  */
+  .promo-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   /* 7) feature-list lar pastga tushishi un */
   .features-list{
     flex-wrap: wrap;
@@ -634,10 +721,24 @@ body {
 
 
 @media only screen and (max-width: 400px) {
+/* 43 rasmni o'lchamini to'g'irlaymiz. O'zi 320px edi*/
+  .promo-img {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* 44) buttonni o'rtaga keltiramiz va promo contentni ustma-ust joylaymiz. 400px✅ promo🛑 */
+  .promo-content {
+    display: flex;
+    flex-direction: column; /*usta-sut bo'ladi*/
+    align-items: center;
+    text-align: center;
+  }
+
   /* 28) 400px bo'lganda rasmning soyasi yuq bo'lsin */
   .hero-img {
     box-shadow: none;
-    /* 29) rasm yaxshi joylashishi uchun 🛑*/
+    /* 29) rasm yaxshi joylashishi uchun. Hero🛑*/
     max-width: 100%;
     height: auto;
   }
